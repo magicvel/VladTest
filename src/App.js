@@ -1,22 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+
+import useCounter from './useCounter';
+
 
 function App() {
+  const [count, minus, plus, reset, save, startMinus, stopCounter, startPlus] = useCounter(1);
+
+
+
+  // const [count, setCount] = useState(0);
+  // const minus = () => {
+  //   return setCount(count - 1);
+  // }
+  // const plus = () => {
+  //   return setCount(count + 1);
+  // }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>{count}</div>
+        <>
+          <button onClick={minus}
+                  onMouseDown={startMinus}
+                  onMouseUp={stopCounter}
+                  onMouseLeave={stopCounter}
+          >-</button>
+          <button onClick={plus} 
+                  onMouseDown={startPlus}
+                  onMouseUp={stopCounter}
+                  onMouseLeave={stopCounter}
+          >+</button>
+          <button onClick={reset}>reset</button>
+          <button onMouseDown={save}>save</button>
+
+        </>
       </header>
     </div>
   );
