@@ -28,14 +28,19 @@ export default function useCounter(initiaValue) {
 
   
   const startMinus = () => {
- 
-  if (value < 1) return;
-    ref.current = setInterval(() => {
-      setValue((prevCounter) => prevCounter - 1);
-    }, 200);
 
-  
-  };
+    if (value <= 1) return;
+      ref.current = setInterval(() => {
+    
+        setValue((prevCounter) => {
+            if (prevCounter <= 1) {
+                clearInterval(ref.current);
+                return prevCounter
+            }
+            return prevCounter - 1
+        } );
+      }, 200);
+    };
 
   const stopCounter = () => {
     if (ref.current) {

@@ -17,11 +17,18 @@ function Dog() {
         return <p>Подожди</p>
     }
 
-    return  <div>
-        <img style={{height: '200px', width: '200px'}} src={dog} alt='dog'/> 
+    return  <>
+        <img 
+        style={{height: '200px', width: '200px'}} 
+        src={dog} 
+        alt='dog'/> 
     
-    <button disabled={isLoading} onClick={dogy}> может другой пёс?</button>
-    </div> 
+    <button 
+    disabled={isLoading} 
+    onClick={dogy}>
+          другой пёс?
+    </button>
+    </> 
     
 }
 export default Dog;

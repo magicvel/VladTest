@@ -1,0 +1,8 @@
+.hide {
+    display: none;
+}
+.form {
+    padding: 5px 15px;
+    margin: 15px;
+    border: 1px solid teal;
+}

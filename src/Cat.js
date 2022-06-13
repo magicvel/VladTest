@@ -33,7 +33,7 @@ function kotik() {
                             </li>
                     })}
                 </ul>
-                <button disabled={isLoading} onClick={kotik}> Следующий лучше</button>
+                <button disabled={isLoading} onClick={kotik}> Еще факт</button>
             </>
 
         )
